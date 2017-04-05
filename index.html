@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A Magical A-Frame Experience</title>
+    <meta name="description" content="A Magic A-Frame Experience">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="//unpkg.com/aframe-leap-hands/dist/aframe-leap-hands.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+    <!-- Generate a model hat -->
+
+    <a-assets>
+        <a-asset-item id="hat-obj" src="models/hat.obj"></a-asset-item>
+        <a-asset-item id="hat-mtl" src="models/hat.mtl"></a-asset-item>
+    </a-assets>
+
+
+    <!-- Bind Some Leap Motion To It -->
+
+      <a-entity leap-hand="hand: left"></a-entity>
+      <a-entity leap-hand="hand: right"></a-entity>
+
+
+   <!-- Dispaly The Object -->
+
+        <a-entity  obj-model="obj: #hat-obj; mtl: #hat-mtl" scale=".45 .45 .45" ></a-entity>
+
+
+
+
+    <!-- Set The Magic Environment -->
+
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
+</html>
